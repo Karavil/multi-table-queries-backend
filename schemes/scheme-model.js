@@ -40,6 +40,10 @@ const remove = (id) => {
    return Schemes().where("id", id).del();
 };
 
+const addStep = (step, scheme_id) => {
+   return SchemeSteps().insert({ ...step, scheme_id });
+};
+
 module.exports = {
    find,
    findById,
@@ -47,4 +51,5 @@ module.exports = {
    add,
    update,
    remove,
+   addStep,
 };
